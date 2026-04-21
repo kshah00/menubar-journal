@@ -14,6 +14,7 @@ This fixes that. The menu bar is always there, so a quick entry is one click awa
 
 ## What it looks like
 <img width="320" height="180" alt="export-1776791478031" src="https://github.com/user-attachments/assets/4c53538b-bd59-462f-b2c2-121e5ae561d7" />
+
 Click the menu bar icon and a small popover opens: a text box, a bookmark toggle, a date, and two buttons — **Save** and **Open**.
 
 - **Save** (⌘S): sends the text to Journal in the background and clears the editor so you can keep going.
