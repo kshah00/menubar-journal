@@ -3,8 +3,8 @@
 # to the values from the release notes (or `shasum -a 256` on the downloaded DMG).
 
 cask "menubar-journal" do
-  version "1.0.1"
-  sha256 "36605e8410fd8f5ac118fdbf85a428ce9ffefb543056445250babfa70c84469d"
+  version "1.0.2"
+  sha256 "6976ffca3227bec28a922d86d4a223b32ab1955fab0917ba55b5a9712835deb6"
 
   url "https://github.com/kshah00/menubar-journal/releases/download/v#{version}/MenubarJournal-#{version}.dmg"
   name "Menubar Journal"

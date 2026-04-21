@@ -83,11 +83,24 @@ struct PlainTextEditor: NSViewRepresentable {
 
         if textView.string != text {
             context.coordinator.isUpdatingFromBinding = true
-            let selected = textView.selectedRanges
+            let newLength = (text as NSString).length
+            let previousRanges = textView.selectedRanges
             textView.string = text
-            textView.selectedRanges = selected.filter { range in
-                guard let r = range as? NSRange else { return false }
-                return NSMaxRange(r) <= (text as NSString).length
+
+            if newLength == 0 {
+                textView.setSelectedRange(NSRange(location: 0, length: 0))
+            } else if previousRanges.isEmpty {
+                textView.setSelectedRange(NSRange(location: 0, length: 0))
+            } else {
+                let clamped: [NSValue] = previousRanges.map { value in
+                    var r = value.rangeValue
+                    r.location = min(max(0, r.location), newLength)
+                    if NSMaxRange(r) > newLength {
+                        r.length = max(0, newLength - r.location)
+                    }
+                    return NSValue(range: r)
+                }
+                textView.selectedRanges = clamped
             }
             context.coordinator.isUpdatingFromBinding = false
         }

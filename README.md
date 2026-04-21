@@ -85,9 +85,9 @@ Pick the **MenubarJournal** scheme and Run. No extra dependencies.
 There's no CI. Releases are built locally.
 
 ```bash
-VERSION=1.0.1 NOTARY_PROFILE="Krish Shah" ./scripts/build_release_dmg.sh
-gh release create v1.0.1 build/MenubarJournal-1.0.1.dmg \
-  --title "Menubar Journal 1.0.1" --generate-notes
+VERSION=1.0.2 NOTARY_PROFILE="Krish Shah" ./scripts/build_release_dmg.sh
+gh release create v1.0.2 build/MenubarJournal-1.0.2.dmg \
+  --title "Menubar Journal 1.0.2" --generate-notes
 ```
 
 The script archives, signs with the Developer ID cert, builds the DMG, notarizes via `notarytool` using the stored keychain profile, and staples the ticket. The last line prints the SHA-256 — paste that and the new version into `packaging/homebrew/menubar-journal.rb`, then mirror the file into [kshah00/homebrew-tap](https://github.com/kshah00/homebrew-tap).
