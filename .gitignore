@@ -1,0 +1,15 @@
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+*.xcuserdatad/
+xcuserdata/
+
+# macOS
+.DS_Store
+
+# Archives / local release artifacts
+*.xcarchive
+*.dmg
+release-notes.md
+AuthKey*.p8
